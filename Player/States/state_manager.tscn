@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Player/States/Idle.gd" type="Script" id=1]
+[ext_resource path="res://Player/States/state_manager.gd" type="Script" id=2]
+[ext_resource path="res://Player/States/Walk.gd" type="Script" id=3]
+[ext_resource path="res://Player/States/Dodge.gd" type="Script" id=4]
+[ext_resource path="res://Player/States/Attack.gd" type="Script" id=5]
+
+[node name="state_manager" type="Node"]
+script = ExtResource( 2 )
+
+[node name="Idle" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[node name="Walk" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="Dodge" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="Attack" type="Node" parent="."]
+script = ExtResource( 5 )

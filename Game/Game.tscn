@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Game/Joystick/Joystick.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Assets/Survivor_bgr_full.png" type="Texture" id=3]
+[ext_resource path="res://Player/States/state_manager.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/Game.gd" type="Script" id=5]
+[ext_resource path="res://Player/Anim/anim_manager.tscn" type="PackedScene" id=6]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+offset = Vector2( 540, 1200 )
+transform = Transform2D( 1, 0, 0, 1, 540, 1200 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1080, 2400 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 540, 1200 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="state_manager" parent="Player" instance=ExtResource( 4 )]
+
+[node name="anim_manager" parent="Player" instance=ExtResource( 6 )]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 540, 1200 )
+current = true
+smoothing_speed = 1.0
+
+[node name="JoystickLayer" type="CanvasLayer" parent="."]
+
+[node name="Joystick" parent="JoystickLayer" instance=ExtResource( 1 )]
+
+[connection signal="move_vector" from="JoystickLayer/Joystick" to="Player" method="_on_input"]
+
+[editable path="Player/state_manager"]
+[editable path="Player/anim_manager"]

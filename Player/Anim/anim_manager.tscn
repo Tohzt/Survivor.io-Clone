@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Player/Anim/Idle_Anim.gd" type="Script" id=1]
+[ext_resource path="res://Player/Anim/anim_manager.gd" type="Script" id=2]
+[ext_resource path="res://Player/Anim/Attack_Anim.gd" type="Script" id=3]
+[ext_resource path="res://Player/Anim/Dodge_Anim.gd" type="Script" id=4]
+[ext_resource path="res://Player/Anim/Walk_Anim.gd" type="Script" id=5]
+
+[node name="anim_manager" type="Node"]
+script = ExtResource( 2 )
+
+[node name="Idle_Anim" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[node name="Attack_Anim" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="Dodge_Anim" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="Walk_Anim" type="Node" parent="."]
+script = ExtResource( 5 )
