@@ -1,7 +1,7 @@
 extends Node2D
 
 var Player : Node2D
-var spawn_cd_dur = 20
+var spawn_cd_dur = 100
 var spawn_cd = spawn_cd_dur
 var spawn_dir = Vector2(0,-500)
 

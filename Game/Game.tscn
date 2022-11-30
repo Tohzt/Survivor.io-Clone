@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Game/Joystick/Joystick.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game/Assets/Survivor_bgr_full.png" type="Texture" id=3]
-[ext_resource path="res://Player/States/state_manager.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/States/STATE_manager.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Game/Game.gd" type="Script" id=5]
-[ext_resource path="res://Player/Anim/anim_manager.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Player/Anim/ANIM_manager.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Game/GUI.gd" type="Script" id=7]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 5 )
@@ -26,20 +27,23 @@ position = Vector2( 540, 1200 )
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
 
-[node name="state_manager" parent="Player" instance=ExtResource( 4 )]
+[node name="STATE_manager" parent="Player" instance=ExtResource( 4 )]
 
-[node name="anim_manager" parent="Player" instance=ExtResource( 6 )]
+[node name="ANIM_manager" parent="Player" instance=ExtResource( 6 )]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 540, 1200 )
 current = true
 smoothing_speed = 1.0
 
-[node name="JoystickLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Joystick" parent="JoystickLayer" instance=ExtResource( 1 )]
+[node name="Joystick" parent="CanvasLayer" instance=ExtResource( 1 )]
 
-[connection signal="move_vector" from="JoystickLayer/Joystick" to="Player" method="_on_input"]
+[node name="GUI" type="Node2D" parent="CanvasLayer"]
+script = ExtResource( 7 )
 
-[editable path="Player/state_manager"]
-[editable path="Player/anim_manager"]
+[connection signal="move_vector" from="CanvasLayer/Joystick" to="Player/STATE_manager" method="_on_Joystick"]
+
+[editable path="Player/STATE_manager"]
+[editable path="Player/ANIM_manager"]

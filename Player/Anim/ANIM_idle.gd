@@ -2,9 +2,9 @@ extends BaseAnim
 
 func enter() -> void:
 	anim_len = 2
-	anim_cd_dur = 10
-	anim_cd = anim_cd_dur
-	anim.animation = "Walk"
+	anim_cd_dur = 30
+	if anim:
+		anim.animation = "Idle"
 	.enter()
 
 func process(delta):
@@ -36,6 +36,7 @@ func process(delta):
 		7:
 			#print("	Down-Left: ", anim_point)
 			frame_offset = 7 * anim_len #14
+	
 	anim.frame = anim_frame + frame_offset
 	.process(delta)
 

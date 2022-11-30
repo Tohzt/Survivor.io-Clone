@@ -13,22 +13,25 @@ var frame_offset : int
 
 enum Anim {
 	Null,
-	Idle_Anim,
-	Walk_Anim,
-	Dodge_Anim,
-	Attack_Anim
+	ANIM_idle,
+	ANIM_walk,
+	ANIM_dodge,
+	ANIM_attack
 }
 
 func enter() -> void:
-	anim_update()
+	# @TODO: Set animation to current state
+	anim_frame = 0
+	anim_cd = anim_cd_dur
+	anim_updateFrame()
 
 func process(_delta: float) -> void:
 	anim_cd-=1
 	if anim_cd <= 0:
 		anim_cd = anim_cd_dur
-		anim_update()
+		anim_updateFrame()
 
-func anim_update() -> void:
+func anim_updateFrame() -> void:
 	anim_frame = (anim_frame+1) % anim_len
 	anim.frame = anim_frame + frame_offset
 

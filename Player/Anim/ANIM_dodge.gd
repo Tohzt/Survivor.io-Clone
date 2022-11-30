@@ -1,12 +1,13 @@
 extends BaseAnim
 
+var start : Vector2
+
 func enter() -> void:
-	print("Enter Idle_Anim")
-	anim_len = 2
-	anim_cd_dur = 30
+	anim_len = 8
+	anim_cd_dur = 1
 	anim_cd = anim_cd_dur
 	if anim:
-		anim.animation = "Idle"
+		anim.animation = "Dodge"
 	.enter()
 
 func exit() -> void:

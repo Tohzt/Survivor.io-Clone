@@ -37,8 +37,10 @@ func _input(event):
 			touch = origin
 			stick = origin
 			move = Vector2(0,0)
+			dodge = Vector2(0,0)
 			if drag_dist >= drag_limit:
 				dodge = drag_position - drag_origin
+			emit_signal("move_vector", move.normalized(), dodge.normalized())
 		
 	if event is InputEventScreenDrag:
 		if !drag:
@@ -47,12 +49,12 @@ func _input(event):
 		drag_position = event.position
 		stick = touch - (touch - event.position).limit_length(rad)
 		move = stick - touch
+		emit_signal("move_vector", move.normalized(), dodge.normalized())
 	
 	update()
 
 func _process(_delta):
-	emit_signal("move_vector", move.normalized(), dodge.normalized())
-	dodge = Vector2(0,0)
+	#emit_signal("move_vector", move.normalized(), dodge.normalized())
 	if pressed:
 		drag_dist_prev = drag_dist
 		drag_dist = drag_origin.distance_to(drag_position)
@@ -62,5 +64,6 @@ func _process(_delta):
 
 func _draw():
 	var color = Color(1,1,1,0.5)
-	draw_circle(touch, rad, color)
+	#draw_circle(touch, rad, color)
+	draw_arc(touch, rad, 0, deg2rad(360), 100, Color(1,1,1,0.25), 32, false)
 	draw_circle(stick, rad/2, color)
