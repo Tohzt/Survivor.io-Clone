@@ -5,7 +5,7 @@ var player: Node2D
 var move_vector: Vector2
 var input_move: Vector2
 var input_dodge: Vector2
-var atk_cd_default : float = 50
+var atk_cd_default : float = 100
 var atk_cd : float = atk_cd_default
 
 onready var STATES = {
@@ -47,7 +47,8 @@ func process():
 		atk_cd-=1
 		if atk_cd <= 0:
 			atk_cd = atk_cd_default
-			change_state(4)
+			if current_state.name != "STATE_dodge":
+				change_state(4)
 
 
 

@@ -45,12 +45,13 @@ animations = [ {
 extents = Vector2( 11, 15 )
 
 [node name="Loot" type="Node2D"]
+z_index = -2
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 3, 3 )
 frames = SubResource( 8 )
-frame = 5
+frame = 1
 playing = true
 
 [node name="Loot_Area2D" type="Area2D" parent="."]

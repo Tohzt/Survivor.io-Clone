@@ -19,7 +19,7 @@ var drag_origin = Vector2(0,0)
 var drag_position = Vector2(0,0)
 
 func _ready():
-	pass
+    pause_mode = Node.PAUSE_MODE_PROCESS
 
 func _input(event):
 	if event is InputEventScreenTouch:

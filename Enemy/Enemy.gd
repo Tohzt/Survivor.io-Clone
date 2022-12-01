@@ -18,6 +18,7 @@ func hit():
 		hp-=10
 		if hp <= 0:
 			is_alive = false
+			get_tree().get_root().get_child(0).kill_count += 1
 			move = Vector2.ZERO
 			spd = 0
 			anim.speed_scale = 1

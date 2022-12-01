@@ -46,6 +46,10 @@ window/handheld/orientation="portrait"
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
+[global]
+
+font=false
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

@@ -1,6 +1,6 @@
 extends Node2D
 
-var value = 5
+var value = 10
 
 func pickup():
 	# Play Animation

@@ -136,6 +136,6 @@ shape = SubResource( 5 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 4 )
 animation = "Hit"
-frame = 2
+frame = 1
 speed_scale = 3.0
 playing = true
