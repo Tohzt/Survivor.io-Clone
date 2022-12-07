@@ -3,7 +3,7 @@ extends BaseState
 var speed = 300
 var _anim_frame : int
 var _anim_len : int
-var _moving: bool
+var is_moving: bool
 var _dur: int
 
 func enter() -> void:
@@ -12,9 +12,9 @@ func enter() -> void:
 	spawn_projectile()
 
 func move(move, _dodge) -> Vector2:
-	_moving = false
+	is_moving = false
 	if move:
-		_moving = true
+		is_moving = true
 		return move * speed
 	return Vector2.ZERO
 
@@ -26,7 +26,7 @@ func check_state() -> int:
 #	_anim_frame = player.anim_manager.current_anim.anim_frame
 #	_anim_len = player.anim_manager.current_anim.anim_len
 #	if _anim_frame == _anim_len-1:
-#		if _moving:
+#		if is_moving:
 #			return STATES_enum.walk
 #		else:
 #			return STATES_enum.idle

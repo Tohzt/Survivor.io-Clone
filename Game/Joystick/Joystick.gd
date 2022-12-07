@@ -54,7 +54,6 @@ func _input(event):
 	update()
 
 func _process(_delta):
-	#emit_signal("move_vector", move.normalized(), dodge.normalized())
 	if pressed:
 		drag_dist_prev = drag_dist
 		drag_dist = drag_origin.distance_to(drag_position)

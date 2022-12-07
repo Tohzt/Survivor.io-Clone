@@ -94,6 +94,3 @@ script = ExtResource( 7 )
 
 [connection signal="pressed" from="CanvasLayer/Pause" to="." method="_on_Pause_pressed"]
 [connection signal="move_vector" from="CanvasLayer/Joystick" to="Player/STATE_manager" method="_on_Joystick"]
-
-[editable path="Player/STATE_manager"]
-[editable path="Player/ANIM_manager"]

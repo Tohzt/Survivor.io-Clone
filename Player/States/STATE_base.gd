@@ -20,3 +20,6 @@ func check_state() -> int:
 #!!
 func move(_m,_d) -> Vector2:
 	return Vector2.ZERO
+
+func exit():
+	pass

@@ -16,7 +16,7 @@ onready var STATES = {
 }
 
 func init(_player: Node2D) -> void:
-	player = get_parent()
+	player = _player
 	current_state = STATES[BaseState.STATES_enum.idle]
 
 func change_state(new_state: int) -> void:
@@ -29,7 +29,7 @@ func change_state(new_state: int) -> void:
 	current_state = STATES[new_state]
 	current_state.enter()
 
-func _on_Joystick(move, dodge):
+func _on_Joystick(move, dodge, attack):
 	input_move = move
 	input_dodge = dodge
 	
@@ -44,11 +44,11 @@ func process():
 			change_state(new_state)
 		
 		# Trigger Attack
-		atk_cd-=1
-		if atk_cd <= 0:
-			atk_cd = atk_cd_default
-			if current_state.name != "STATE_dodge":
-				change_state(4)
+#		atk_cd-=1
+#		if atk_cd <= 0:
+#			atk_cd = atk_cd_default
+#			if current_state.name != "STATE_dodge":
+#				change_state(BaseState.STATES_enum.attack)
 
 
 

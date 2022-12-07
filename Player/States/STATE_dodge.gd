@@ -8,8 +8,8 @@ func enter() -> void:
 	_dur = 20
 	.enter()
 
-func move(_m,_d) -> Vector2:
-	return get_parent().input_dodge * speed
+func move(_move, dodge) -> Vector2:
+	return dodge * speed
 
 func check_state() -> int:
 	_dur-=1

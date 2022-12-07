@@ -35,6 +35,5 @@ func level_up() -> void:
 		xp_last_level = xp
 		xp_needed *= 1.5
 
-
 func _on_Pause_pressed():
 	get_tree().paused = !get_tree().paused
