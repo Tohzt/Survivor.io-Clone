@@ -16,7 +16,8 @@ enum ANIM_enum {
 	IDLE,
 	WALK,
 	DODGE,
-	ATTACK
+	ATTACK,
+	DEAD
 }
 
 func enter() -> void:

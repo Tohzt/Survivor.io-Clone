@@ -1,6 +1,7 @@
 extends Node2D
 signal move_vector
 
+var attack = false
 var move = Vector2(0,0)
 var dodge = Vector2(0,0)
 var origin = Vector2(540,1800)
@@ -32,6 +33,8 @@ func _input(event):
 			drag_dist = 0
 		
 		if !event.pressed:
+			if !drag:
+				attack = true
 			pressed = false
 			drag = false
 			touch = origin
@@ -40,7 +43,8 @@ func _input(event):
 			dodge = Vector2(0,0)
 			if drag_dist >= drag_limit:
 				dodge = drag_position - drag_origin
-			emit_signal("move_vector", move.normalized(), dodge.normalized())
+			emit_signal("move_vector", move.normalized(), dodge.normalized(), attack)
+			attack = false
 		
 	if event is InputEventScreenDrag:
 		if !drag:
@@ -49,7 +53,7 @@ func _input(event):
 		drag_position = event.position
 		stick = touch - (touch - event.position).limit_length(rad)
 		move = stick - touch
-		emit_signal("move_vector", move.normalized(), dodge.normalized())
+		emit_signal("move_vector", move.normalized(), dodge.normalized(), attack)
 	
 	update()
 

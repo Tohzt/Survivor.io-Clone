@@ -3,9 +3,6 @@ extends BaseState
 var friction = 2.5
 var is_moving = false
 
-func enter():
-	.enter()
-
 func move(move, _dodge) -> Vector2:
 	if move:
 		is_moving = true

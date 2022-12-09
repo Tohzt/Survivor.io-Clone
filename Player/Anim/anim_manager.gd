@@ -7,6 +7,7 @@ onready var ANIMS = {
 	BaseAnim.ANIM_enum.WALK: $ANIM_walk,
 	BaseAnim.ANIM_enum.DODGE: $ANIM_dodge,
 	BaseAnim.ANIM_enum.ATTACK: $ANIM_attack,
+	BaseAnim.ANIM_enum.DEAD: $ANIM_dead,
 }
 
 func init(player: Node2D) -> void:

@@ -18,5 +18,8 @@ script = ExtResource( 3 )
 [node name="ANIM_dodge" type="Node" parent="."]
 script = ExtResource( 4 )
 
+[node name="ANIM_dead" type="Node" parent="."]
+script = ExtResource( 4 )
+
 [node name="ANIM_walk" type="Node" parent="."]
 script = ExtResource( 5 )

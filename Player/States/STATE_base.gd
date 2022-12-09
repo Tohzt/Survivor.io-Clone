@@ -6,12 +6,14 @@ enum STATES_enum {
 	idle,
 	walk,
 	dodge,
-	attack
+	attack,
+	dead
 }
 
-var player: Node2D
+var Player: Node2D
 
-func enter():
+func enter(player: Node2D):
+	Player = player
 	pass
 
 func check_state() -> int:

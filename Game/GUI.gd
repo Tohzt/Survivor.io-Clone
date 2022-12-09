@@ -20,7 +20,7 @@ func _ready():
 		width = OS.get_screen_size().y - margin*2
 	
 	dynamic_font = DynamicFont.new()
-	dynamic_font.font_data = load("res://Game/Assets/Font.TTF")
+	dynamic_font.font_data = load("res://Game/Assets/Font.ttf")
 	dynamic_font.size = 40
 	self.set("custom_fonts/font", dynamic_font)
 

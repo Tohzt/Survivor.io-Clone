@@ -8,6 +8,7 @@ func _ready():
 	pass
 
 func _process(delta):
+	set_rotation(move.angle())
 	position += move*delta*spd
 
 func _on_Area2D_area_entered(area):

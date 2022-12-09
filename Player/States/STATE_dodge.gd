@@ -1,12 +1,12 @@
 extends BaseState
 
-var speed = 3000
+var speed = 2000
 var _dur: int
 var start : Vector2
 
-func enter() -> void:
+func enter(player) -> void:
 	_dur = 20
-	.enter()
+	.enter(player)
 
 func move(_move, dodge) -> Vector2:
 	return dodge * speed

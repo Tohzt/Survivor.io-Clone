@@ -4,9 +4,6 @@ var speed = 300
 var is_moving = false
 var is_dodging = false
 
-func enter() -> void:
-	.enter()
-
 func move(move, dodge) -> Vector2:
 	is_moving = false
 	if move:

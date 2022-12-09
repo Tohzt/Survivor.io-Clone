@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Pause/Resume.gd" type="Script" id=1]
+
+[node name="PauseScreen" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_left = 0.15
+anchor_top = 0.3
+anchor_right = 0.85
+anchor_bottom = 0.7
+color = Color( 0.101961, 0.101961, 0.101961, 0.564706 )
+
+[node name="PausePlay" type="Button" parent="."]
+unique_name_in_owner = true
+anchor_left = 0.25
+anchor_top = 0.56
+anchor_right = 0.75
+anchor_bottom = 0.66
+text = "Play"
+icon_align = 1
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="PausePlay" to="PausePlay" method="play_or_restart"]

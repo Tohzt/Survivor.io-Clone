@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Survivor"
-run/main_scene="res://Game/Game.tscn"
+run/main_scene="res://Character Select/CharacterSelect.tscn"
 config/icon="res://icon.png"
 
 [display]

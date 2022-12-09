@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/States/STATE_idle.gd" type="Script" id=1]
 [ext_resource path="res://Player/States/STATE_manager.gd" type="Script" id=2]
 [ext_resource path="res://Player/States/STATE_walk.gd" type="Script" id=3]
 [ext_resource path="res://Player/States/STATE_dodge.gd" type="Script" id=4]
 [ext_resource path="res://Player/States/STATE_attack.gd" type="Script" id=5]
+[ext_resource path="res://Player/States/STATE_dead.gd" type="Script" id=6]
 
 [node name="STATE_manager" type="Node"]
 script = ExtResource( 2 )
@@ -17,6 +18,9 @@ script = ExtResource( 3 )
 
 [node name="STATE_dodge" type="Node" parent="."]
 script = ExtResource( 4 )
+
+[node name="STATE_dead" type="Node" parent="."]
+script = ExtResource( 6 )
 
 [node name="STATE_attack" type="Node" parent="."]
 script = ExtResource( 5 )

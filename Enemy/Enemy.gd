@@ -8,7 +8,9 @@ var is_alive = true
 var move = Vector2(0,0)
 var spd = 100
 var target : Node2D
-var target_dist = 100
+var target_dist = 10
+var knockback = 20
+var damage = 20
 
 func _ready():
 	pass
