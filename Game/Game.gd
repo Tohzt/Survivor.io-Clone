@@ -15,6 +15,8 @@ var xp_needed = 100
 var xp_last_level = 0
 
 func _ready():
+	print(Singleton.type)
+	Singleton.get_type()
 	Pause = load("res://Pause/PauseScreen.tscn")
 	Enemy = load("res://Enemy/Enemy.tscn")
 	Player = get_node("YSort").get_node("Player")

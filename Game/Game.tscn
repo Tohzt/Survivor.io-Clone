@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Game/Joystick/Joystick.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Game/Assets/Dungeon tileset.png" type="Texture" id=8]
 [ext_resource path="res://Game/Pause.gd" type="Script" id=9]
 [ext_resource path="res://Game/Assets/Pause_Btn.png" type="Texture" id=10]
+[ext_resource path="res://Player/PLAYER_type.tscn" type="PackedScene" id=11]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Floor"
@@ -90,6 +91,8 @@ position = Vector2( 540, 1200 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
 remote_path = NodePath("../../../Camera2D")
+
+[node name="PLAYER_type" parent="YSort/Player" instance=ExtResource( 11 )]
 
 [node name="STATE_manager" parent="YSort/Player" instance=ExtResource( 4 )]
 
